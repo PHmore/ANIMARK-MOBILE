@@ -1,26 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      ANIMARK
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form (submit)="autenticarUsuario()">
-    <ion-list>
-      <ion-item>
-        <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username"></ion-input>
-      </ion-item>
-      <!-- <ion-item>
-        <ion-input label="Email" type="text" name="email" [(ngModel)]="instancia.email"></ion-input>
-      </ion-item> -->
-      <ion-item>
-        <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password"></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-button expand="block" (click)="autenticarUsuario()">Autenticar</ion-button>
-  </form>
-
-  <ion-button expand="full" (click)="goToCadastro()">Cadastrar-se</ion-button>
+<ion-content [fullscreen]="true" class="ion-padding background-image">
+  <ion-grid class="ion-align-items-center full-height">
+    <ion-row class="full-height">
+      <ion-col size-md="6" offset-md="3" class="full-height">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              <div class="logo-container">
+                <div class="title">ANIMARK</div>
+                <img src="assets/img/logo.svg" alt="Logo" class="logo">
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form (submit)="autenticarUsuario()">
+              <ion-list>
+                <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username" label-placement="floating" fill="outline" placeholder="Usuário"></ion-input>
+                <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password" label-placement="floating" fill="outline" placeholder="Senha"></ion-input>
+              </ion-list>
+              <ion-button expand="block" (click)="autenticarUsuario()" class="login">Fazer Login</ion-button>
+            </form>
+            <ion-button expand="full" (click)="goToCadastro()" class="cadastro">Cadastrar-se</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

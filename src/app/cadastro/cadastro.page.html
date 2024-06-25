@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      ANIMARK
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,15 +9,8 @@
 <ion-content [fullscreen]="true">
   <form (submit)="cadastrarUsuario()">
     <ion-list>
-      <ion-item>
-        <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username"></ion-input>
-      </ion-item>
-      <!-- <ion-item>
-        <ion-input label="Email" type="text" name="email" [(ngModel)]="instancia.email"></ion-input>
-      </ion-item> -->
-      <ion-item>
-        <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password"></ion-input>
-      </ion-item>
+      <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username" label-placement="floating" fill="outline" placeholder="Usuário"></ion-input>
+      <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password" label-placement="floating" fill="outline" placeholder="Senha"></ion-input>
     </ion-list>
     <ion-button expand="block" (click)="cadastrarUsuario()">Cadastrar</ion-button>
   </form>

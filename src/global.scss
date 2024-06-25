@@ -35,3 +35,21 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+ion-input.custom.ios .input-bottom .helper-text,
+ion-input.custom.ios .input-bottom .counter,
+ion-input.custom.md .input-bottom .helper-text,
+ion-input.custom.md .input-bottom .counter {
+  color: var(--ion-color-primary);
+}
+
+/* Criação de variáveis globais no css */
+:root {
+    --primary-color: #0B604B;
+    --secundary-color: #0db78c;
+    --green-color: #14600b;
+    --red-color:#600b0b;
+    --red-light-color: #c02d2d;
+    --transblack-color: rgba(0,0,0,0.7);
+}
+
