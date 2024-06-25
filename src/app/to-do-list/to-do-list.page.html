@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>ANIMARK</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/animes']" [disabled]="currentRoute === '/animes'">
+        <ion-icon slot="icon-only" name="list-outline"></ion-icon>
+        Animes
+      </ion-button>
+      <ion-button [routerLink]="['/to-do-list']" [disabled]="currentRoute === '/to-do-list'">
+        <ion-icon slot="icon-only" name="checkbox-outline"></ion-icon>
+        To-Do List
+      </ion-button>
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+        Sair
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1>Lista de Animes e Episódios</h1>
+  <ion-list>
+    <ion-item-sliding *ngFor="let anime of todo_anime">
+      <ion-item>
+        <ion-label>
+          <h2>{{ anime.titulo }}</h2>
+        </ion-label>
+        <ion-button slot="end" color="danger" (click)="excluirTask(anime.id)">Excluir</ion-button>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="excluirTask(anime.mal_id)">
+          Excluir
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-list *ngFor="let episodio of anime.episodios">
+        <ion-item>
+          <ion-label>
+            <p>{{ episodio.numero }}: Assistido: {{ episodio.assistido }}</p>
+          </ion-label>
+          <ion-button slot="end" (click)="toggleEpisodioAssistido(anime.id, episodio.id)">
+            Alternar Assistido
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
