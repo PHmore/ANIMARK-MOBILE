@@ -1,0 +1,33 @@
+ion-content.custom-background {
+  --background: url('/assets/login_bg.svg') no-repeat center center / cover;
+}
+
+.centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+ion-card {
+  max-width: 500px; /* Define a largura máxima do card */
+  margin: 10px; /* Espaçamento entre os cards */
+  width: 90%; /* Define a largura do card */
+}
+
+.page-title {
+  color: white;
+  text-align: center;
+}
+
+.footer-buttons {
+  justify-content: center;
+  width: 100%;
+}

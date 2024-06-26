@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -23,31 +23,28 @@
 
 <ion-content [fullscreen]="true">
   <h1>Lista de Animes e Episódios</h1>
-  <ion-list>
-    <ion-item-sliding *ngFor="let anime of todo_anime">
-      <ion-item>
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let anime of todo_anime" [value]="anime.mal_id">
+      <ion-item class="acc-head" slot="header">
         <ion-label>
           <h2>{{ anime.titulo }}</h2>
         </ion-label>
         <ion-button slot="end" color="danger" (click)="excluirTask(anime.id)">Excluir</ion-button>
       </ion-item>
-
-      <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="excluirTask(anime.mal_id)">
-          Excluir
-        </ion-item-option>
-      </ion-item-options>
-
-      <ion-list *ngFor="let episodio of anime.episodios">
-        <ion-item>
-          <ion-label>
-            <p>{{ episodio.numero }}: Assistido: {{ episodio.assistido }}</p>
-          </ion-label>
-          <ion-button slot="end" (click)="toggleEpisodioAssistido(anime.id, episodio.id)">
-            Alternar Assistido
-          </ion-button>
-        </ion-item>
-      </ion-list>
-    </ion-item-sliding>
-  </ion-list>
+      <div class="ion-padding" slot="content">
+        <ion-accordion-group>
+          <ion-accordion *ngFor="let episodio of anime.episodios" [value]="episodio.id">
+            <ion-item slot="header">
+              <ion-label>
+                <p>Episódio {{ episodio.numero }}: {{ episodio.assistido ? 'Visto' : 'Não visto' }}</p>
+              </ion-label>
+              <ion-button slot="end" (click)="toggleEpisodioAssistido(anime.id, episodio.id)">
+                Alternar Assistido
+              </ion-button>
+            </ion-item>
+          </ion-accordion>
+        </ion-accordion-group>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>

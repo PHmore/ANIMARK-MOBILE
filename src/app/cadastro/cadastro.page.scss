@@ -1,0 +1,93 @@
+.background-image {
+    --background: url('/assets/img/login_bg.svg') no-repeat center center / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .full-height {
+    height: 100%;
+  }
+  
+  ion-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-row, ion-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  ion-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    max-width: 500px; /* Aumenta o tamanho do card */
+    margin-top: 20px; /* Espaçamento acima do card */
+    margin-bottom: 20px; /* Espaçamento abaixo do card */
+    border-radius: 15px; /* Arredondando os cantos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra ao card */
+    padding: 20px; /* Adiciona espaçamento interno ao card */
+    --background: #0b604b51;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Espaçamento abaixo do logo */
+  }
+  
+  .title {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 30px; /* Ajuste o tamanho conforme necessário */
+    font-weight: bold;
+    margin-right: 10px; /* Espaçamento entre o título e a logo */
+    color: var(--secundary-color);
+  }
+  
+  .logo {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+  }
+  
+  ion-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  ion-input {
+    margin-bottom: 10px; /* Espaçamento entre os inputs */
+  }
+  
+  ion-button.login {
+    margin-top: 10px; /* Espaçamento entre os botões e outros elementos */
+    border-radius: 20px; /* Arredondando os botões */
+    --background: var(--secundary-color); /* Cor do botão */
+    --color: rgb(0, 0, 0); /* Cor do texto do botão */
+    width: 100%;
+  }
+  
+  ion-button.cadastro {
+    margin-top: 10px; /* Espaçamento entre os botões e outros elementos */
+    border-radius: 50px !important; /* Arredondando os botões */
+    --background: rgb(0, 0, 0); /* Cor do botão */
+    --color: var(--secundary-color); /* Cor do texto do botão */
+    --border: solid 1px var(--secundary-color);
+    border: solid 1px var(--secundary-color);
+    width: 100%;
+  }
+  

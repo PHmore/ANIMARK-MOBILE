@@ -6,36 +6,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form (submit)="cadastrarUsuario()">
-    <ion-list>
-      <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username" label-placement="floating" fill="outline" placeholder="Usuário"></ion-input>
-      <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password" label-placement="floating" fill="outline" placeholder="Senha"></ion-input>
-    </ion-list>
-    <ion-button expand="block" (click)="cadastrarUsuario()">Cadastrar</ion-button>
-  </form>
-
-  <ion-button expand="full" (click)="goToLogin()">Fazer Login</ion-button>
+<ion-content [fullscreen]="true" class="ion-padding background-image">
+  <ion-grid class="ion-align-items-center full-height">
+    <ion-row class="full-height">
+      <ion-col size-md="6" offset-md="3" class="full-height">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">
+              <div class="logo-container">
+                <div class="title">ANIMARK</div>
+                <img src="assets/img/logo.svg" alt="Logo" class="logo">
+              </div>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form (submit)="cadastrarUsuario()">
+              <ion-list>
+                <ion-input label="Usuário" type="text" name="usuario" [(ngModel)]="instancia.username" label-placement="floating" fill="outline" placeholder="Usuário"></ion-input>
+                <ion-input label="Senha" type="password" name="senha" [(ngModel)]="instancia.password" label-placement="floating" fill="outline" placeholder="Senha"></ion-input>
+              </ion-list>
+              <ion-button expand="block" (click)="cadastrarUsuario()" class="login">Cadastrar</ion-button>
+            </form>
+            <ion-button expand="full" (click)="goToLogin()" class="cadastro">Fazer Login</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-
-
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>Cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <form [formGroup]="formularioCadastro" (ngSubmit)="cadastrarUsuario()">
-    <ion-item>
-      <ion-label position="floating">Nome de Usuário</ion-label>
-      <ion-input formControlName="username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input formControlName="senha" type="password"></ion-input>
-    </ion-item>
-    <ion-button expand="full" type="submit" [disabled]="formularioCadastro.invalid">Cadastrar</ion-button>
-  </form>
-</ion-content> -->
